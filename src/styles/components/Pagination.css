@@ -1,0 +1,20 @@
+.Pagination{
+    margin: 20px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+}
+.Pagination .react-icons {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.Pagination .number{
+    padding: 10px;
+    cursor: pointer;
+}
+.Pagination .selected{
+    background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+    color: white;
+    padding: 10px;
+}

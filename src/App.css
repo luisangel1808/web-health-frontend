@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  max-width: 100%;
+  background: rgb(173,185,244);
+  background: linear-gradient(153deg, rgba(202, 206, 224, 0.65) 23%, rgba(186,182,219,1) 95%, rgba(228,233,233,1) 100%);  
+}
+main{
+  display: flex;
+  justify-content: center;
+}
+h1{
+  text-align: center;
+}

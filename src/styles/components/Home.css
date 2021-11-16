@@ -1,0 +1,58 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  max-width: 100vw;
+}
+.presentation button {
+  background-color: #e5a00d;
+  font-size: 24px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 20px;
+  z-index: 1;
+  margin-top: 30px;
+}
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  width: 100%;
+  background-image: url("https://thumbs.dreamstime.com/z/uso-de-estetioscopio-con-smartphone-doctor-trav%C3%A9s-la-pantalla-telef%C3%B3nica-chequeo-estado-consulta-m%C3%A9dica-en-l%C3%ADnea-medicina-162019687.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.presentation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.presentation h1 {
+  color: white;
+  font-size: 50px;
+  z-index: 1;
+  text-rendering: optimizeLegibility;
+}
+.cards {
+  display: flex;
+  flex-direction: row;
+  /*width: 100vw;*/
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1000px) {
+  .cards {
+    flex-wrap: nowrap;
+  }
+}

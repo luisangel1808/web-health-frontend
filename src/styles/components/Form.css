@@ -1,0 +1,101 @@
+.Form{
+    width: max-content;
+    border-radius: 10px;
+    justify-self: center;
+    color: black;
+    padding: 20px;
+}
+
+.Form .inp{
+    margin-block: 10px;
+    background-color: rgb(61, 235, 168);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(11, 180, 166);
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  }
+
+.inp input, .inp select{
+    background-color: rgb(255, 255, 255);
+    width: 90%;
+    text-align: left;
+    height: 100%;
+    border-radius: 0;
+    margin: 0;
+    min-width: 130px;
+    color: black;
+    padding: 5px;
+}
+
+.Form .icon{
+    background-color: rgb(211, 211, 243);
+    border-radius: 100%;
+    padding: 30px;
+    position: absolute;
+    top: -45px;
+}
+
+.icon :only-child{
+    width: 100%;
+}
+
+.Form .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}
+
+.text p, .inp p{
+    margin-inline: 10px;
+}
+.Form p{
+    text-align: center;
+}
+::placeholder{
+    color: white;
+}
+
+.time input{
+    width: 10px;
+}
+
+.inp svg{
+    margin-inline: 5px;
+}
+.Form button {
+    background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    padding: 1rem 1.75rem;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    margin: 5px;
+    align-items: center;
+    width: 100%;
+  }
+
+  button:active {
+    background-color: #3e8e41;
+    transform: translateY(4px);
+  }
