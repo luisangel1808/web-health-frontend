@@ -12,7 +12,7 @@ const NewPassword = (props) => {
     e.preventDefault();
     form.current[0].value = "";
     try {
-      await axios.patch("http://localhost:4000/api/change-password", {
+      await axios.patch("https://warm-mountain-11426.herokuapp.com/api/change-password", {
         newPassword:password,
         token:props.location.search.substr(7)
       });

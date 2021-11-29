@@ -17,7 +17,7 @@ const Login = () => {
     form.current[0].value = "";
     form.current[1].value = "";
     try {
-      const res = await axios.post("http://localhost:4000/api/login", {
+      const res = await axios.post("https://warm-mountain-11426.herokuapp.com/api/login", {
         email,
         password,
       });

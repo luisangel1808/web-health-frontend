@@ -83,7 +83,7 @@ const PressureForm = () => {
       if (selectedPressure) {
         await axios({
           method:'patch',
-          url:`http://localhost:4000/api/pressure/${selectedPressure._id}`,
+          url:`https://warm-mountain-11426.herokuapp.com/api/pressure/${selectedPressure._id}`,
           data:{
             systolic,
             diastolic,
@@ -105,7 +105,7 @@ const PressureForm = () => {
       } else {
         await axios({
           method:'post',
-          url:'http://localhost:4000/api/pressure',
+          url:'https://warm-mountain-11426.herokuapp.com/api/pressure',
           data:{
             systolic,
             diastolic,

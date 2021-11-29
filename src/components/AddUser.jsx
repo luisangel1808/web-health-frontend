@@ -21,10 +21,10 @@ const AddUser = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:4000/api/user", 
-            { headers: {
+            await axios.post("https://warm-mountain-11426.herokuapp.com/api/user", 
+/*             { headers: {
                 Authorization: `Bearer ${localStorage.token}` 
-            }},
+            }}, */
             {
                 name,
                 lastName,

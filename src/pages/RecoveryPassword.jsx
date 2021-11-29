@@ -14,7 +14,7 @@ const RecoveryPassword = () => {
     e.preventDefault();
     form.current[0].value = "";
     try {
-      await axios.post("http://localhost:4000/api/recovery", {
+      await axios.post("https://warm-mountain-11426.herokuapp.com/api/recovery", {
         email,
       });
       history.push('/email-sent');

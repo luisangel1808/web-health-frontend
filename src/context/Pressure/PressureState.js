@@ -15,7 +15,7 @@ const PressureState = (props) => {
   const getPressures = async (offset = 0, limit = 5) => {
     try {
       const res = await axios.get(
-        'http://localhost:4000/api/pressure-personal/',
+        'https://warm-mountain-11426.herokuapp.com/api/pressure-personal/',
         { params: { offset, limit },
           headers: {
           Authorization: `Bearer ${localStorage.token}` 
@@ -31,7 +31,7 @@ const PressureState = (props) => {
   };
 
   const getPressure = async (id) => {
-    const res = await axios.get(`http://localhost:4000/api/pressure/${id}`,{
+    const res = await axios.get(`https://warm-mountain-11426.herokuapp.com/api/pressure/${id}`,{
       headers: {
         Authorization: `Bearer ${localStorage.token}` 
       }

@@ -14,7 +14,7 @@ const TaskState = (props) => {
 
   const getTasks = async (idUser) => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/user/${idUser}`,{
+      const res = await axios.get(`https://warm-mountain-11426.herokuapp.com/api/user/${idUser}`,{
         headers: {
           Authorization: `Bearer ${localStorage.token}` 
         }
@@ -29,7 +29,7 @@ const TaskState = (props) => {
   };
 
   const getTask = async (id, idUser) => {
-    const res = await axios.get(`http://localhost:4000/api/user/${idUser}`,{
+    const res = await axios.get(`https://warm-mountain-11426.herokuapp.com/api/user/${idUser}`,{
       headers: {
         Authorization: `Bearer ${localStorage.token}` 
       }
