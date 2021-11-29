@@ -11,7 +11,11 @@ const PressureRow = ({measurement, index}) => {
 
     const deleteMeasurement = async(id) =>{
         if (window.confirm('¿Estás seguro que quieres borrarlo?'))
-            await axios.delete(`http://localhost:4000/api/pressure/${id}`);
+            await axios.delete(`http://localhost:4000/api/pressure/${id}`,{
+                headers: {
+                    Authorization: `Bearer ${localStorage.token}` 
+                },
+            });
             setUpdate(!update);
     }
 

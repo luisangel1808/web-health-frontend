@@ -14,7 +14,7 @@ import Video from "./components/Video";
 import Videos from "./pages/Videos";
 import TasksMain from "./pages/TasksMain";
 import Signup from "./pages/Signup";
-import TaskState from "./context/task/TaskState";
+import TaskState from "./context/Task/TaskState";
 import NewPassword from "./pages/NewPassword";
 import RecoveryPassword from "./pages/RecoveryPassword";
 import EmailSent from "./pages/EmailSent";

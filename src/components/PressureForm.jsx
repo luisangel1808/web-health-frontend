@@ -79,18 +79,21 @@ const PressureForm = () => {
     }
 
     try {
+      //TODO Valores seleccionados para editar
       if (selectedPressure) {
-        await axios.patch(
-          `http://localhost:4000/api/pressure/${selectedPressure._id}`,
-          {
+        await axios({
+          method:'patch',
+          url:`http://localhost:4000/api/pressure/${selectedPressure._id}`,
+          data:{
             systolic,
             diastolic,
             date,
             observations,
             pulse,
             valoration: makeValoration(systolic, diastolic),
-          }
-        );
+          },
+          headers:{Authorization: "Bearer " + localStorage.token}
+        })
         setState({
           ...state,
           open: true,
@@ -100,15 +103,19 @@ const PressureForm = () => {
         });
         setUpdate(!update);
       } else {
-        await axios.post("http://localhost:4000/api/pressure", {
-          idUser: "1",
-          systolic,
-          diastolic,
-          date,
-          observations,
-          pulse,
-          valoration: makeValoration(systolic, diastolic),
-        });
+        await axios({
+          method:'post',
+          url:'http://localhost:4000/api/pressure',
+          data:{
+            systolic,
+            diastolic,
+            date,
+            observations,
+            pulse,
+            valoration: makeValoration(systolic, diastolic),
+          },
+          headers:{Authorization: "Bearer " + localStorage.token}
+        })
         setState({
           ...state,
           open: true,
@@ -188,7 +195,6 @@ const PressureForm = () => {
             <BsFillPenFill />
             <textarea
               name="observations"
-              id=""
               cols="24"
               rows="2"
               defaultValue={pressureE.observations}

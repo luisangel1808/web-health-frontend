@@ -6,6 +6,7 @@ import "../styles/components/Header.css";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
+  const token = localStorage.token;
   return (
     <header>
       <nav className={`menu ${menu ? "n-active" : "n-inactive"}`}>
@@ -45,12 +46,18 @@ const Header = () => {
           </li>
         </ul>
         <div className="in">
-          <Link to="login">
-            <button className="header-item">Ingresar</button>
-          </Link>
-          <Link to="signup">
-            <button className="header-item">Registrarse</button>
-          </Link>
+          {!token ? (
+            <>
+            <Link to="login">
+              <button className="header-item">Ingresar</button>
+            </Link>
+            <Link to="signup">
+              <button className="header-item">Registrarse</button>
+            </Link>
+            </>
+          ) : (
+            <button className="header-item" onClick={()=>localStorage.removeItem('token')}>Cerrar sesión</button>
+          )}
         </div>
         <div className="toggle">
           {menu ? (

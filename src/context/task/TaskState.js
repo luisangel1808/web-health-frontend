@@ -14,7 +14,11 @@ const TaskState = (props) => {
 
   const getTasks = async (idUser) => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/user/${idUser}`);
+      const res = await axios.get(`http://localhost:4000/api/user/${idUser}`,{
+        headers: {
+          Authorization: `Bearer ${localStorage.token}` 
+        }
+      });
       dispatch({
         type: "GET_TASKS",
         payload: res.data.tasks,
@@ -25,7 +29,11 @@ const TaskState = (props) => {
   };
 
   const getTask = async (id, idUser) => {
-    const res = await axios.get(`http://localhost:4000/api/user/${idUser}`);
+    const res = await axios.get(`http://localhost:4000/api/user/${idUser}`,{
+      headers: {
+        Authorization: `Bearer ${localStorage.token}` 
+      }
+    });
     const task = res.data.tasks.filter((task) => task.id === id);
     dispatch({
       type: "GET_TASK",

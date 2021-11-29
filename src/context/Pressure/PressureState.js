@@ -12,11 +12,14 @@ const PressureState = (props) => {
   const [update, setUpdate] = useState(false);
   const [state, dispatch] = useReducer(PressureReducer, initialState);
 
-  const getPressures = async (idUser, offset = 0, limit = 5) => {
+  const getPressures = async (offset = 0, limit = 5) => {
     try {
       const res = await axios.get(
-        `http://localhost:4000/api/${idUser}/pressure`,
-        { params: { offset, limit } }
+        'http://localhost:4000/api/pressure-personal/',
+        { params: { offset, limit },
+          headers: {
+          Authorization: `Bearer ${localStorage.token}` 
+        } }
       );
       dispatch({
         type: "GET_PRESSURES",
@@ -28,7 +31,11 @@ const PressureState = (props) => {
   };
 
   const getPressure = async (id) => {
-    const res = await axios.get(`http://localhost:4000/api/pressure/${id}`);
+    const res = await axios.get(`http://localhost:4000/api/pressure/${id}`,{
+      headers: {
+        Authorization: `Bearer ${localStorage.token}` 
+      }
+    });
     dispatch({
       type: "GET_PRESSURE",
       payload: res.data,

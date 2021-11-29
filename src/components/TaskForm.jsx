@@ -5,7 +5,7 @@ import { RiHeartPulseFill } from "react-icons/ri";
 import axios from "axios";
 import Alert from "@mui/material/Alert";
 import "../styles/components/Form.css";
-import TaskContext from "../context/task/TaskContext";
+import TaskContext from "../context/Task/TaskContext";
 import { Snackbar } from "@mui/material";
 
 const TaskForm = () => {

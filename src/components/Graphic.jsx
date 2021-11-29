@@ -6,9 +6,8 @@ import '../styles/components/Graphic.css';
 const Graphic = () => {
 
   const {pressures, getPressures} = useContext(PressureContext)
-  const idUser='1';
   useEffect(()=>{
-      getPressures(idUser);
+      getPressures();
   },[])
 
     const da= {

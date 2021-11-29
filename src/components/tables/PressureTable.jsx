@@ -16,7 +16,7 @@ const PressureTable = () => {
     const [pages, setPages] = useState(Math.ceil(total/limit))
     
     useEffect(()=>{
-        getPressures(1, offset, limit);
+        getPressures(offset, limit);
     },[offset, update])
 
     useEffect(()=>{

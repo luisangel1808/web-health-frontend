@@ -21,7 +21,11 @@ const AddUser = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault();
         try{
-            await axios.post("http://localhost:4000/api/user", {
+            await axios.post("http://localhost:4000/api/user", 
+            { headers: {
+                Authorization: `Bearer ${localStorage.token}` 
+            }},
+            {
                 name,
                 lastName,
                 identificationType,
