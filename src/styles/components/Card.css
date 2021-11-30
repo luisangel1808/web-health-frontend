@@ -37,3 +37,10 @@
 .Card p{
     margin-block: 10px;
 }
+
+@media (max-width: 1068px) {
+    .Card {
+      width: 100vw;
+    }
+  }
+  

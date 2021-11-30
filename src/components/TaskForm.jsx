@@ -48,15 +48,19 @@ const TaskForm = () => {
     e.preventDefault();
     try {
       if (selectedTask) {
-        await axios.patch(
-          `https://warm-mountain-11426.herokuapp.com/api/user/6187f3956b5aaa977e002c50/add-task`,
-          {
+        await axios({
+          method:'patch',
+          url:`https://warm-mountain-11426.herokuapp.com/api/edit-task/1`,
+          data:{
             description,
             title,
             importance,
             frequency,
+          },
+          headers: {
+            Authorization: `Bearer ${localStorage.token}` 
           }
-        );
+        })
         setState({
           ...state,
           open: true,
@@ -65,15 +69,19 @@ const TaskForm = () => {
           vertical: "top",
         });
       } else {
-        await axios.patch(
-          `https://warm-mountain-11426.herokuapp.com/api/user/6187f3956b5aaa977e002c50/add-task`,
-          {
+        await axios({
+          method:'patch',
+          url:`https://warm-mountain-11426.herokuapp.com/api/add-task`,
+          data:{
             description,
             title,
             importance,
             frequency,
+          },
+          headers: {
+            Authorization: `Bearer ${localStorage.token}` 
           }
-        );
+        })
         setUpdate(!update);
         setState({
           ...state,

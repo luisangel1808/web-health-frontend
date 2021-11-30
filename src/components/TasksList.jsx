@@ -5,7 +5,7 @@ import ItemTask from "./ItemTask";
 const TasksList = () => {
   const { getTasks, tasks, update } = useContext(TaskContext);
   useEffect(() => {
-    getTasks("6187f3956b5aaa977e002c50");
+    getTasks();
   }, [update]);
 
   return (

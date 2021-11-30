@@ -12,16 +12,16 @@ const TaskState = (props) => {
   const [state, dispatch] = useReducer(TaskReducer, initialState);
   const [update, setUpdate] = useState(false);
 
-  const getTasks = async (idUser) => {
+  const getTasks = async () => {
     try {
-      const res = await axios.get(`https://warm-mountain-11426.herokuapp.com/api/user/${idUser}`,{
+      const res = await axios.get(`https://warm-mountain-11426.herokuapp.com/api/user-data`,{
         headers: {
-          Authorization: `Bearer ${localStorage.token}` 
+          Authorization: `Bearer ${localStorage.token}` ,
         }
       });
       dispatch({
         type: "GET_TASKS",
-        payload: res.data.tasks,
+        payload: res.data? res.data.tasks : [],
       });
     } catch (error) {
       alert(`Las tareas no pudieron consultarse ${error}`);
