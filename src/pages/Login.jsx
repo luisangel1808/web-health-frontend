@@ -1,12 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { BiUser } from "react-icons/bi";
 import { BsUnlockFill } from "react-icons/bs";
 import axios from "axios";
 import "../styles/components/Login.css";
 import "../styles/components/Form.css";
-
+import { AuthContext } from "../hooks/useAuthentication";
+  
 const Login = () => {
+  const {setToken} = useContext(AuthContext);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const form = useRef(null);
@@ -23,6 +25,7 @@ const Login = () => {
       });
       console.log(res);
       localStorage.token = res.data.token;
+      setToken(res.data.token)
       history.push('/pressure');
       //localStorage.username = username;
     } catch (eror) {

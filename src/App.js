@@ -18,36 +18,38 @@ import TaskState from "./context/Task/TaskState";
 import NewPassword from "./pages/NewPassword";
 import RecoveryPassword from "./pages/RecoveryPassword";
 import EmailSent from "./pages/EmailSent";
+import { AuthProvider } from "./hooks/useAuthentication";
+import PrivateRoute from "./components/PrivateRoutes";
 
 
 const App = () => {
   return (
-    
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          <PressureState>
-          <TaskState>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/list" component={List} />
-          <Route exact path="/profile" component={Profile} />
-          <Route exact path="/teams" component={Teams} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/pressure" component={PressureMain} />
-          <Route exact path="/pressure-data" component={Graphic} />
-          <Route exact path="/video/:id" component={Video} />
-          <Route exact path="/videos" component={Videos} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/tasks" component={TasksMain} />
-          <Route exact path="/recovery-password" component={RecoveryPassword} />
-          <Route exact path="/email-sent" component={EmailSent} />
-          <Route exact path="/change-password" component={NewPassword} />
-          </TaskState>
-          </PressureState>
-        </Switch>
-      </Layout>
-    </BrowserRouter>
-    
+    <AuthProvider>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <PressureState>
+            <TaskState>
+            <Route exact path="/" component={Home} />
+            <PrivateRoute exact path="/list" component={List} />
+            <PrivateRoute exact path="/profile" component={Profile} />
+            <PrivateRoute exact path="/teams" component={Teams} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute exact path="/pressure" component={PressureMain} />
+            <PrivateRoute exact path="/pressure-data" component={Graphic} />
+            <PrivateRoute exact path="/video/:id" component={Video} />
+            <PrivateRoute exact path="/videos" component={Videos} />
+            <Route exact path="/signup" component={Signup} />
+            <PrivateRoute exact path="/tasks" component={TasksMain} />
+            <Route exact path="/recovery-password" component={RecoveryPassword} />
+            <Route exact path="/email-sent" component={EmailSent} />
+            <Route exact path="/change-password" component={NewPassword} />
+            </TaskState>
+            </PressureState>
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

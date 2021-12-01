@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import LittleCard from "../components/LittleCard";
 import { FaShare } from "react-icons/fa";
 import { GoDatabase, GoGraph } from "react-icons/go";
 import { TiPen } from "react-icons/ti";
 import "../styles/components/Home.css";
+import { AuthContext } from "../hooks/useAuthentication";
 const Home = () => {
+  const {token} = useContext(AuthContext);
   const data = [
     {
       icon: <GoDatabase size="2.5em" />,
@@ -31,9 +33,10 @@ const Home = () => {
       text: "Mejorar los niveles de la presión arterial son mejorar nuestra calidad de vida. Por lo tanto, es importante que puedas consultar en este punto, los Consejos y actividades aquí propuestas",
     },
   ];
-
+console.log(token)
   return (
     <div className="Home">
+      
       <section className="presentation">
         <h1>Haz el seguimiento de tu salud</h1>
         <button>Comenzar</button>

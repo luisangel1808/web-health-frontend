@@ -93,6 +93,7 @@ nav img {
   flex-wrap: wrap;
   align-items: flex-start;
   list-style-type: none;
+  z-index: 999;
 }
 .menu li a {
   display: block;

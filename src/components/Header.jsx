@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import { FaTimes, FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Logo from "../statics/logo.png";
 import "../styles/components/Header.css";
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const token = localStorage.token;
+  const history = useHistory();
+
+  const close = () =>{
+    window.localStorage.removeItem('token')
+    history.push('/');
+  }
   return (
     <header>
       <nav className={`menu ${menu ? "n-active" : "n-inactive"}`}>
@@ -56,7 +62,7 @@ const Header = () => {
             </Link>
             </>
           ) : (
-            <button className="header-item" onClick={()=>localStorage.removeItem('token')}>Cerrar sesión</button>
+            <button className="header-item" onClick={()=>close()}>Cerrar sesión</button>
           )}
         </div>
         <div className="toggle">
