@@ -11,10 +11,10 @@ import PressureContext from "../context/Pressure/PressureContext";
 import { Snackbar } from "@mui/material";
 
 const PressureForm = () => {
-  const [systolic, setSystolic] = useState(0);
-  const [diastolic, setDiastolic] = useState(0);
-  const [date, setDate] = useState(new Date().toLocaleString());
-  const [pulse, setPulse] = useState(0);
+  const [systolic, setSystolic] = useState();
+  const [diastolic, setDiastolic] = useState();
+  const [date, setDate] = useState(toIso(new Date()));
+  const [pulse, setPulse] = useState();
   const [observations, setObservations] = useState("");
   const [pressureE, setPressureE] = useState({});
   const [button, setButton] = useState("Guardar");
@@ -87,7 +87,7 @@ const PressureForm = () => {
           data:{
             systolic,
             diastolic,
-            date,
+            date: new Date(date).toJSON(),
             observations,
             pulse,
             valoration: makeValoration(systolic, diastolic),
@@ -109,7 +109,7 @@ const PressureForm = () => {
           data:{
             systolic,
             diastolic,
-            date,
+            date: new Date(date).toJSON(),
             observations,
             pulse,
             valoration: makeValoration(systolic, diastolic),
@@ -125,8 +125,7 @@ const PressureForm = () => {
         });
         setUpdate(!update);
       }
-      //localStorage.token = res.data.token;
-      //localStorage.username = username;
+
     } catch (error) {
       setState({
         ...state,

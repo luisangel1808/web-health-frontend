@@ -4,7 +4,7 @@ import { FiMail, FiPhone, FiUsers,  } from "react-icons/fi";
 import { FaBirthdayCake  } from "react-icons/fa";
 import { HiOutlineIdentification  } from "react-icons/hi";
 import { RiLockPasswordFill  } from "react-icons/ri";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../styles/components/Form.css';
 
 const AddUser = () => {
@@ -16,7 +16,8 @@ const AddUser = () => {
     const [identificationType, setIdentificationType] = useState("0");
     const [birthDate, setBirthDate] = useState(null);
     const [phone, setPhone] = useState("");
-
+    const history = useHistory();
+    
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
@@ -37,6 +38,8 @@ const AddUser = () => {
                 username:identification,
                 phone
             });
+            alert("Usuario registrado exitosamente")
+            history.push('/login');
         }
         catch(e){
             alert(e)

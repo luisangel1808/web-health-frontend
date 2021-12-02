@@ -73,6 +73,7 @@ export const toIso = date =>{
         let tLocal = t - z;
         tLocal = new Date(tLocal);
         let iso = tLocal.toISOString();
+        
         return iso.slice(0, 16);
 
 }
