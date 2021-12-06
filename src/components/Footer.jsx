@@ -12,52 +12,38 @@ const Footer = () => {
         <li>
           <Link to="#">Empresa</Link>
           <ul>
-            <li>Nuestro equipo</li>
-            <li>Trabaja con nosotros</li>
-            <li>Solidaridad</li>
-            <li>Plex Labs</li>
-            <li>Sala de prensa</li>
-            <li>Socios</li>
-            <li>Extelespectadores</li>
-            <li>Accesorios de Plex</li>
+            <li>Próximamente</li>
           </ul>
         </li>
         <li>
-          <Link to="#">Plex Plass</Link>
+          <Link to="#">Premium</Link>
           <ul>
-            <li>Hazte Premium</li>
-            <li>Get Perks</li>
+            <li>Próximamente</li>
           </ul>
         </li>
         <li>
           <Link to="#">Descargas</Link>
           <ul>
-            <li>Plex Media Server</li>
-            <li>Apps y dispositivos</li>
-            <li>Where to watch</li>
+            <li>Próximamente</li>
           </ul>
         </li>
         <li>
           <Link to="#">Asistencia</Link>
           <ul>
-            <li>Artículos</li>
-            <li>Foros</li>
-            <li>Dudas de facturación</li>
-            <li>Estado</li>
-            <li>Bug Bounty</li>
+            <li>Próximamente</li>
           </ul>
         </li>
         <li>
           <Link to="#">Comunidad</Link>
           <ul>
-            <li>Blog de Plex</li>
-            <li>The Gist</li>
-            <li>Show Spotlight: Ted Lasso</li>
+            <li>Próximamente</li>
           </ul>
         </li>
         <li>
           <Link to="#">Contacto</Link>
-          <ul></ul>
+          <ul>
+            <li>luisangel1808@hotmail.com</li>
+          </ul>
         </li>
       </ul>
     </footer>

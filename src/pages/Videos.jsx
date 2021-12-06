@@ -11,6 +11,7 @@ const Videos = () => {
       title: "Video1",
       text: "Este es el video1",
       id: 1,
+      url: "https://www.youtube.com/watch?v=_JDOGSkVMNY"
     },
     {
       image: {
@@ -20,6 +21,7 @@ const Videos = () => {
       title: "Video2",
       text: "Este es el video2",
       id: 2,
+      url:"https://www.youtube.com/watch?v=lb6PHOfY39w"
     },
     {
       image: {
@@ -29,6 +31,7 @@ const Videos = () => {
       title: "Video3",
       text: "Este es el video3",
       id: 3,
+      url:"https://www.youtube.com/watch?v=8Lawnkm5vTU"
     },
     {
       image: {
@@ -38,6 +41,7 @@ const Videos = () => {
       title: "Video4",
       text: "Este es el video4",
       id: 4,
+      url:"https://www.youtube.com/watch?v=ZMUP8VQvAuE"
     },
     {
       image: {
@@ -47,6 +51,7 @@ const Videos = () => {
       title: "Equipo1",
       text: "Este es el equipo",
       id: 5,
+      url:"https://www.youtube.com/watch?v=52n6mvaILiM",
     },
     {
       image: {
@@ -56,6 +61,7 @@ const Videos = () => {
       title: "Equipo1",
       text: "Este es el equipo",
       id: 6,
+      url:"https://www.youtube.com/watch?v=D3y3pWVQHco",
     },
   ];
 

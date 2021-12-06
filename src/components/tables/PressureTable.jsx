@@ -34,8 +34,8 @@ const PressureTable = () => {
             numbers.push(`${i+1}`)
         }
 
-
-    return (
+    
+    return pressures.length > 0 ?(
         <div className="PressureTable">
         <h2>Registros</h2>
         <table>
@@ -70,6 +70,8 @@ const PressureTable = () => {
         </IconContext.Provider>
         </div>
         </div>
+    ): (
+        <h2>Aún no tiene presiones registradas</h2>
     )
 }
 

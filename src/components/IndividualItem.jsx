@@ -6,12 +6,16 @@ import {AiOutlineUsergroupAdd} from "react-icons/ai";
 
 const IndividualItem = (props) => {
     
-    const  {props: {image, title, text}} = props
+    const  {props: {name, lastName, email}} = props
+    const image = {
+        src: "https://www.ngenespanol.com/wp-content/uploads/2018/08/La-primera-imagen-de-la-historia.jpg",
+        alt: "img",
+    }
     return (
         <div className="Individual-item">
-            <h2>{title}</h2>
+            <h2>{`${name} ${lastName}`}</h2>
             <img src={image.src} alt={image.alt} />
-            <p>{text}</p>
+            <p>{email}</p>
             <div>
                 <AiOutlineEye size='1.5em'/>
                 <AiOutlineUsergroupAdd size='1.5em'/>

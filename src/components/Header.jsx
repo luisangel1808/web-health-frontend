@@ -37,7 +37,7 @@ const Header = () => {
           </li>
           <li className="header-item">
             <Link to="/pressure-data" onClick={() => setMenu(false)}>
-              Registros
+              Gráficas
             </Link>
           </li>
           <li className="header-item">

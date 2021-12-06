@@ -13,9 +13,10 @@ const TasksList = () => {
       <div className="List-header">Tareas</div>
       <ul>
         <div className="a2">
-          {tasks.map((task) => (
+          {tasks.length>0?
+          tasks.map((task) => (
             <ItemTask task={task} />
-          ))}
+          )):<h2>No tienes tareas</h2>}
         </div>
       </ul>
     </div>

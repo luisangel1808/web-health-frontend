@@ -1,7 +1,23 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import IndividualItem from "../components/IndividualItem";
 
 const Teams = () => {
+
+  const [users, setUsers] = useState([])
+
+  useEffect( async() => {
+    const res = await axios({
+      method:'get',
+      url:`https://warm-mountain-11426.herokuapp.com/api/user`,
+      headers: {
+        Authorization: `Bearer ${localStorage.token}` 
+      }
+    })
+    setUsers(res.data);
+  }, [])
+
+
   const data = [
     {
       image: {
@@ -55,7 +71,7 @@ const Teams = () => {
 
   return (
     <div className="Items">
-      {data.map((item, i) => (
+      {users.map((item, i) => (
         <IndividualItem props={item} key={i} />
       ))}
     </div>
